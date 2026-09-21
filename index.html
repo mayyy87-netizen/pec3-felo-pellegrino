@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+<header class="header">
+   <a href="#" class="logo-link">
+    <img src="imagen/Logo transparente.png" alt="Logo Felo Pellegrino" class="logo-img">
+  </a>
+    
+  <input type="checkbox" id="menu-toggle" class="menu-toggle">
+<label for="menu-toggle" class="hamburger-btn" aria-label="Abrir menú">
+  <i class="fa-solid fa-bars"></i>
+</label>
+
+
+    <nav class="nav-links">
+      <a href="index.html" class="active">inicio</a>
+      <a href="galeria.html">galería</a>
+      <a href="tienda.html">tienda</a>
+      <a href="sobre_mi.html">sobre mí</a>
+    </nav>
+
+  </header> 
+
+  <section id="inicio" class="hero">
+
+  <div class="hero-cover">
+    <img src="imagen/ALBUM 2.png" alt="Portada album El queria cantar" class="cover-img">
+  </div>
+
+  <div class="hero-content">
+    <span class="subtitle">nuevo album</span>
+    <h1 class="title">él&nbsp;quería<br>cantar</h1>
+    <p class="tagline">el comienzo de todo</p>
+    <a href="https://open.spotify.com/intl-es/artist/0mSjZNfoNsbA3nzGYJvwx7" class="boton-primario" target="_blank" rel="noopener noreferrer">escuchar ahora</a>
+  </div>
+
+  <div class="hero-artist">
+    <img src="imagen/Recorte header.png" alt="Felo Pellegrino cantando" class="artist-img">
+  </div>
+
+</section>
+
+ <!-- seccion plataformas -->
+
+<section class="banner-plataformas">
+  <div class="plataformas-raw">
+    <a href="https://open.spotify.com/intl-es/artist/0mSjZNfoNsbA3nzGYJvwx7" target="_blank" rel="noopener noreferrer" class="platform-row">
+      <i class="fa-brands fa-spotify"></i>
+      <span>Spotify</span>
+    </a>
+    <a href="https://music.apple.com/do/artist/felo-pellegrino/1522488277" target="_blank" rel="noopener noreferrer" class="platform-row">
+      <i class="fa-brands fa-apple"></i>
+      <span>Apple</span>
+    </a>
+    <a href="https://www.youtube.com/@felopellegrino" target="_blank" rel="noopener noreferrer" class="platform-row">
+      <i class="fa-brands fa-youtube"></i>
+      <span>YouTube</span>
+    </a>
+    <a href="https://www.deezer.com/es/artist/100000622" target="_blank" rel="noopener noreferrer" class="platform-row">
+      <i class="fa-brands fa-deezer"></i>
+      <span>Deezer</span>
+    </a>
+    <a href="https://tidal.com/artist/20390198" target="_blank" rel="noopener noreferrer" class="platform-row">
+      <i class="fa-solid fa-gem"></i>
+      <span>Tidal</span>
+    </a>
+  </div>
+</section>
+
+ <!-- seccion sobre mi -->
+
+<section id="sobre-mi" class="home-sobre-mi">
+  <div class="sobre-mi-container">
+    <div class="sobre-mi-content">
+      <span class="section-tag">sobre mí</span>
+      <h2 class="section-title">mi historia,<br>mi música<br>mi origen.</h2>
+      <p class="section-text">
+        Nací en Argentina, crecí en Canarias. Una mezcla de culturas que me formó y me dio mi voz. Llevo más de una década creando música, explorando sonidos y contando historias que nacen de lo real.
+      </p>
+      <a href="sobre_mi.html" class="btn-primario">conoce más</a>
+    </div>
+
+    <div class="sobre-mi-image">
+      <img src="imagen/Fondo sobre mi.png" alt="Felo Pellegrino" class="img-felo">
+    </div>
+  </div>
+</section>
+
+
+<!-- SECCION MUSICA -->
+<section id="musica" class="home-musica">
+  <div class="musica-container">
+    
+    <div class="musica-header">
+      <h2 class="musica-title">MÚSICA</h2>
+      <a href="https://open.spotify.com/intl-es/artist/0mSjZNfoNsbA3nzGYJvwx7" class="link-ver-mas" target="_blank" rel="noopener noreferrer"">VER TODA LA MUSICA &rarr;</a>
+    </div>
+
+    <div class="musica-content">
+      
+      <div class="col-lanzamiento">
+        <img src="imagen/ALBUM 2.png" alt="Baila Pa' Mí" class="cover-art">
+        <div class="lanzamiento-info">
+          <span class="label-lanzamiento">ÚLTIMO LANZAMIENTO</span>
+          <h3 class="track-title">BAILA PA’ MÍ</h3>
+          
+          <!-- REPRODUCTOR DE AUDIO  -->
+          <div class="player-controls">
+            <a href="https://open.spotify.com/intl-es/track/3ApeDU1EWEFmhJIcMl4uJJ" target="_blank" rel="noopener noreferrer">
+            <button class="btn-play" aria-label="Reproducir">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </button>
+            </a>
+            <div class="waveform">
+              <span class="bar short"></span>
+              <span class="bar tall"></span>
+              <span class="bar medium"></span>
+              <span class="bar short"></span>
+              <span class="bar short"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ol class="col-tracklist">
+        <li class="active">1. baila pa`mí</li>
+        <li>2. su nombre</li>
+        <li>3. vamos a pasarla bien</li>
+        <li>4. no me digas</li>
+        <li>5. cuéntale</li>
+      </ol>
+
+      <div class="col-plataformas">
+        <a href="https://open.spotify.com/intl-es/artist/0mSjZNfoNsbA3nzGYJvwx7" target="_blank" rel="noopener noreferrer" class="platform-row">
+      <i class="fa-brands fa-spotify"></i>
+      <span>Spotify</span>
+    </a>
+    <a href="https://music.apple.com/do/artist/felo-pellegrino/1522488277" target="_blank" rel="noopener noreferrer" class="platform-row">
+      <i class="fa-brands fa-apple"></i>
+      <span>Apple</span>
+    </a>
+    <a href="https://www.youtube.com/@felopellegrino" target="_blank" rel="noopener noreferrer" class="platform-row">
+      <i class="fa-brands fa-youtube"></i>
+      <span>YouTube</span>
+    </a>
+    <a href="https://www.deezer.com/es/artist/100000622" target="_blank" rel="noopener noreferrer" class="platform-row">
+      <i class="fa-brands fa-deezer"></i>
+      <span>Deezer</span>
+    </a>
+    <a href="https://tidal.com/artist/20390198" target="_blank" rel="noopener noreferrer" class="platform-row">
+      <i class="fa-solid fa-gem"></i>
+      <span>Tidal</span>
+    </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="home-doble-seccion">
+  <div class="doble-seccion-container">
+    
+    <div class="bloque-home">
+      <div class="bloque-header">
+        <h2 class="bloque-title">GALERÍA</h2>
+        <a href="galeria.html" class="link-ver-todo">VER TODO &rarr;</a>
+      </div>
+      <div class="bloque-grid">
+        <div class="grid-item"><img src="imagen/Image 25 jun 2026, 19_46_51.png" alt="Felo Pellegrino con gafas de sol"></div>
+        <div class="grid-item"><img src="imagen/Image 27 jun 2026, 00_56_40.png" alt="Felo Pellegrino en rodaje"></div>
+        <div class="grid-item"><img src="imagen/Image 30 jun 2026, 12_02_54.png" alt="Felo Pellegrino con guitarra"></div>
+        <div class="grid-item"><img src="imagen/mage 27 jun 2026, 00_59_28.png" alt="Felo Pellegrino en escaleras"></div>
+      </div>
+    </div>
+
+    <div class="bloque-home">
+      <div class="bloque-header">
+        <h2 class="bloque-title">TIENDA</h2>
+        <a href="tienda.html" class="link-ver-todo">VER TODO &rarr;</a>
+      </div>
+      <div class="bloque-grid">
+        <div class="grid-item"><img src="imagen/Camiseta.png" alt="Sudadera FP"></div>
+        <div class="grid-item"><img src="imagen/Gorra.png" alt="Gorra FP"></div>
+        <div class="grid-item"><img src="imagen/Sudadera.png" alt="Camiseta Origen"></div>
+        <div class="grid-item"><img src="imagen/Camiseta.png" alt="Camiseta Origen"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-container">
+    
+    <div class="footer-col-logo">
+      <img src="imagen/Logo transparente.png" alt="Felo Pellegrino Logo" class="footer-logo">
+      <div class="footer-socials">
+       <a href="https://open.spotify.com/intl-es/artist/0mSjZNfoNsbA3nzGYJvwx7" target="_blank" rel="noopener noreferrer" class="platform-row">
+      <i class="fa-brands fa-spotify"></i>
+    </a>
+    <a href="https://music.apple.com/do/artist/felo-pellegrino/1522488277" target="_blank" rel="noopener noreferrer" class="platform-row">
+      <i class="fa-brands fa-apple"></i>
+    </a>
+    <a href="https://www.youtube.com/@felopellegrino" target="_blank" rel="noopener noreferrer" class="platform-row">
+      <i class="fa-brands fa-youtube"></i>
+    </a>
+    <a href="https://www.tiktok.com/@felopellegrino" target="_blank" rel="noopener noreferrer" class="platform-row">
+      <i class="fa-brands fa-tiktok"></i>
+    </a>
+    <a href="https://www.instagram.com/felopellegrino/reels/" target="_blank" rel="noopener noreferrer" class="platform-row">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+      </div>
+    </div>
+
+    <div class="footer-col-contact">
+      <h3 class="footer-title">BOOKING/CONTACTO</h3>
+      <p class="contact-item">
+        <span class="icon">&#9993;</span> 
+        <a href="mailto:booking@felopellegrino.com">booking@felopellegrino.com</a>
+      </p>
+      <p class="contact-item">
+        <span class="icon">&#9742;</span> 
+        <a href="tel:567877887">567 877 887</a>
+      </p>
+    </div>
+
+    <div class="footer-col-form">
+      <form class="contact-form" action="#" method="POST">
+        <div class="form-row">
+          <input type="text" name="nombre" placeholder="Nombre" required>
+          <input type="email" name="email" placeholder="Email" required>
+        </div>
+        <textarea name="mensaje" placeholder="Mensaje" rows="3" required></textarea>
+        <button type="submit" class="btn-enviar">ENVIAR MENSAJE</button>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p class="copyright">&copy; 2026 Felo Pellegrino. Todos los derechos reservados</p>
+    <div class="legal-links">
+      <a href="politica-privacidad.html">Politica de privacidad</a>
+      <a href="terminos-condiciones.html">Terminos y condiciones</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
