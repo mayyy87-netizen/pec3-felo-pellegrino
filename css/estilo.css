@@ -48,14 +48,14 @@ body {
 }
 
 .nav-links a {
-  color: var(--color-dorado)
+  color: var(--color-dorado);
   font-size: 18px;            
   font-weight: 500;
   text-decoration: none;
 }
 
 .nav-links a:hover {
-  color: var(--color-bronce)       
+  color: var(--color-bronce);       
 }
 
 .nav-links a.active {
