@@ -5,29 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="js/funciones.js" defer></script>
     <title>Document</title>
 </head>
 
 <body>
 <header class="header">
-   <a href="#" class="logo-link">
+
+  <a href="index.html" class="logo-link">
     <img src="imagen/Logo transparente.png" alt="Logo Felo Pellegrino" class="logo-img">
   </a>
     
-  <input type="checkbox" id="menu-toggle" class="menu-toggle">
-<label for="menu-toggle" class="hamburger-btn" aria-label="Abrir menú">
-  <i class="fa-solid fa-bars"></i>
-</label>
+  <button id="hamburger-btn" class="hamburger-btn" aria-label="Abrir menú">
+    <i class="fa-solid fa-bars"></i>
+  </button>
 
+  <nav class="nav-links">
+    <a href="index.html" class="active">inicio</a>
+    <a href="galeria.html">galería</a>
+    <a href="tienda.html">tienda</a>
+    <a href="sobre_mi.html">sobre mí</a>
+  </nav>
 
-    <nav class="nav-links">
-      <a href="index.html" class="active">inicio</a>
-      <a href="galeria.html">galería</a>
-      <a href="tienda.html">tienda</a>
-      <a href="sobre_mi.html">sobre mí</a>
-    </nav>
-
-  </header> 
+</header>
 
   <section id="inicio" class="hero">
 
@@ -110,17 +110,19 @@
         <img src="imagen/ALBUM 2.png" alt="Baila Pa' Mí" class="cover-art">
         <div class="lanzamiento-info">
           <span class="label-lanzamiento">ÚLTIMO LANZAMIENTO</span>
-          <h3 class="track-title">BAILA PA’ MÍ</h3>
+          <h3 class="track-title" id="track-title">BAILA PA’ MÍ</h3>
           
           <!-- REPRODUCTOR DE AUDIO  -->
           <div class="player-controls">
-            <button class="btn-play" aria-label="Reproducir">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
+            <audio id="audio-player" src="audio/Baila Pa' Mi - Felo Pellegrino (Estribillo Coreo).mp3"></audio>
+
+            <button class="btn-play" id="btn-play" aria-label="Reproducir" type="button">
+  <svg id="icon-svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M8 5v14l11-7z"/>
+  </svg>
             </button>
             </a>
-            <div class="waveform">
+            <div class="waveform" id="waveform">
               <span class="bar short"></span>
               <span class="bar tall"></span>
               <span class="bar medium"></span>
@@ -131,12 +133,12 @@
         </div>
       </div>
 
-      <ol class="col-tracklist">
-        <li class="active">1. baila pa`mí</li>
-        <li>2. su nombre</li>
-        <li>3. vamos a pasarla bien</li>
-        <li>4. no me digas</li>
-        <li>5. cuéntale</li>
+      <ol class="col-tracklist" id="tracklist">
+        <li class="active" data-src="audio/baila-pa-mi.mp3" data-title="baila pa`mí">1. baila pa`mí</li>
+  <li src="audio/Baila Pa' Mi - Felo Pellegrino (Estribillo Coreo).mp3" data-title="su nombre">2. su nombre</li>
+  <li src="audio/Baila Pa' Mi - Felo Pellegrino (Estribillo Coreo).mp3" data-title="vamos a pasarla bien">3. vamos a pasarla bien</li>
+  <li src="audio/Baila Pa' Mi - Felo Pellegrino (Estribillo Coreo).mp3" data-title="no me digas">4. no me digas</li>
+  <li src="audio/Baila Pa' Mi - Felo Pellegrino (Estribillo Coreo).mp3" data-title="cuéntale">5. cuéntale</li>
       </ol>
 
       <div class="col-plataformas">
@@ -244,6 +246,7 @@
         </div>
         <textarea name="mensaje" placeholder="Mensaje" rows="3" required></textarea>
         <button type="submit" class="btn-enviar">ENVIAR MENSAJE</button>
+        <p class="form-mensaje"></p>
       </form>
     </div>
 

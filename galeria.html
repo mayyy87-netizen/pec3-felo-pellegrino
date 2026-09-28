@@ -6,30 +6,30 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="js/funciones.js" defer></script>
 
 </head>
 <body>
 
 
 <header class="header">
-   <a href="#" class="logo-link">
+  
+  <a href="index.html" class="logo-link">
     <img src="imagen/Logo transparente.png" alt="Logo Felo Pellegrino" class="logo-img">
   </a>
     
-  <input type="checkbox" id="menu-toggle" class="menu-toggle">
-<label for="menu-toggle" class="hamburger-btn" aria-label="Abrir menú">
-  <i class="fa-solid fa-bars"></i>
-</label>
+  <button id="hamburger-btn" class="hamburger-btn" aria-label="Abrir menú">
+    <i class="fa-solid fa-bars"></i>
+  </button>
 
+  <nav class="nav-links">
+    <a href="index.html">inicio</a>
+    <a href="galeria.html"class="active">galería</a>
+    <a href="tienda.html">tienda</a>
+    <a href="sobre_mi.html">sobre mí</a>
+  </nav>
 
-    <nav class="nav-links">
-      <a href="index.html">inicio</a>
-      <a href="galeria.html" class="active">galería</a>
-      <a href="tienda.html">tienda</a>
-      <a href="sobre_mi.html">sobre mí</a>
-    </nav>
-
-  </header> 
+</header>
 
 
    <main class="pagina-galeria">
@@ -48,34 +48,58 @@
 
   <section class="galeria-contenido">
     
-    <nav class="galeria-filtros">
-      <a href="#" class="filtro-item active">todas</a>
-      <a href="#" class="filtro-item">conciertos</a>
-      <a href="#" class="filtro-item">detrás de camarás</a>
-      <a href="#" class="filtro-item">videoclips</a>
+   <nav class="galeria-filtros">
+      <a href="#" class="filtro-item btn-filtro active" data-filter="todos">todas</a>
+      <a href="#" class="filtro-item btn-filtro" data-filter="conciertos">conciertos</a>
+      <a href="#" class="filtro-item btn-filtro" data-filter="estudio">detrás de cámaras</a>
+      <a href="#" class="filtro-item btn-filtro" data-filter="videoclips">videoclips</a>
     </nav>
 
     <div class="galeria-grid-custom">
-      <div class="foto-card foto-grande">
-        <img src="imagen/Brazos abiertos.png" alt="Felo Pellegrino en la playa">
-      </div>
-      <div class="foto-card foto-grande">
-        <img src="imagen/Con la moto.png" alt="Moto en la carretera">
-      </div>
+  
+  <div class="foto-card foto-grande" data-category="conciertos">
+    <img src="imagen/Brazos abiertos.png" alt="Felo Pellegrino en la playa" class="galeria-img">
+  </div>
+  
+  <div class="foto-card foto-grande" data-category="estudio">
+    <img src="imagen/Con la moto.png" alt="Moto en la carretera" class="galeria-img">
+  </div>
 
-      <div class="foto-card foto-mediana">
-        <img src="imagen/Escaleras face.png" alt="Actuación en directo videoclip">
-      </div>
-      <div class="foto-card foto-mediana">
-        <img src="imagen/Image 25 jun 2026, 19_46_51.png" alt="Sesión de fotos">
-      </div>
-      <div class="foto-card foto-mediana">
-        <img src="imagen/Image 27 jun 2026, 00_56_40.png" alt="Rodaje de videoclip">
-      </div>
-    </div>
+  <div class="foto-card foto-mediana" data-category="videoclips">
+    <img src="imagen/Escaleras face.png" alt="Actuación en directo videoclip" class="galeria-img">
+  </div>
+  
+  <div class="foto-card foto-mediana" data-category="estudio">
+    <img src="imagen/Image 25 jun 2026, 19_46_51.png" alt="Sesión de fotos" class="galeria-img">
+  </div>
+  
+  <div class="foto-card foto-mediana" data-category="videoclips">
+    <img src="imagen/Image 27 jun 2026, 00_56_40.png" alt="Rodaje de videoclip" class="galeria-img">
+  </div>
+
+
+
+  <div class="foto-card foto-mediana extra" data-category="videoclips">
+    <img src="imagen/Extra 1.png" alt="Rodaje de videoclip" class="galeria-img">
+  </div>
+  
+  <div class="foto-card foto-mediana extra" data-category="conciertos">
+    <img src="imagen/Extra 2.png" alt="Rodaje de videoclip" class="galeria-img">
+  </div>
+  
+  <div class="foto-card foto-mediana extra" data-category="estudio">
+    <img src="imagen/Extra 3.png" alt="Rodaje de videoclip" class="galeria-img">
+  </div>
+  
+  <div class="foto-card foto-mediana extra" data-category="conciertos">
+    <img src="imagen/Extra 4.png" alt="Rodaje de videoclip" class="galeria-img">
+  </div>
+
+</div>
 
     <div class="caja-btn-mas">
-      <button class="btn-ver-mas">ver más</button>
+      <button id="btn-ver-mas" class="btn-ver-mas">ver más</button>
+      
     </div>
 
   </section>
@@ -144,8 +168,11 @@
   </div>
 </footer>
 
-</body>
-</html>
-    
+<!-- Modal / Lightbox para ver la foto en grande -->
+<div id="lightbox" class="lightbox" aria-hidden="true">
+  <span id="lightbox-close" class="lightbox-close">&times;</span>
+  <img id="lightbox-img" class="lightbox-content" src="" alt="Imagen ampliada">
+</div>
+
 </body>
 </html>
