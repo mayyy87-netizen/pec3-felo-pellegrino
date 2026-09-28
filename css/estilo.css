@@ -37,11 +37,7 @@ body {
 }
 
 .hamburger-btn {
-  background: none;
-  border: none;
-  font-size: 1.8rem;
-  color: inherit;
-  cursor: pointer;
+ display: none;
 }
 
 .nav-links {
@@ -691,10 +687,9 @@ body {
 
 /*  MEDIA QUERIES RESPONSIVE */
 
-/* --- TABLETS Y PANTALLAS MEDIANAS (HASTA 1024px) --- */
+/* --- TABLETS Y MÓVILES (HASTA 1024px) --- */
 @media screen and (max-width: 1024px) {
 
-  /* Header y Menú Hamburguesa */
   .header {
     position: relative;
     padding: 20px 40px;
@@ -702,10 +697,11 @@ body {
 
   .hamburger-btn {
     display: block;
+    background: transparent;
+    border: none;
     color: #f2e3c6;
     font-size: 2rem;
     cursor: pointer;
-    margin-left: auto;
   }
 
   .nav-links {
@@ -724,7 +720,7 @@ body {
   }
 
   .nav-links.active {
-  display: flex;
+    display: flex;
   }
 
   .nav-links a {
@@ -732,8 +728,8 @@ body {
     width: 100%;
     border-top: 1px solid #111111;
     text-align: right;
+    box-sizing: border-box;
   }
-
 
   /* Hero */
   .hero {
@@ -748,7 +744,7 @@ body {
     margin-left: 0;
   }
 
-  /* Seccion sobre mi */
+  /* Sección sobre mí */
   .sobre-mi-container {
     flex-direction: column;
     padding: 0 20px;
@@ -763,7 +759,7 @@ body {
     height: auto;
   }
 
-  /* Seccion musica */
+  /* Sección música */
   .musica-content {
     display: flex;
     flex-direction: column;
@@ -784,7 +780,7 @@ body {
     justify-content: flex-start;
   }
 
-  /* Seccion galeria y tienda */
+  /* Sección galería y tienda */
   .doble-seccion-container {
     grid-template-columns: 1fr;
     gap: 50px;
@@ -807,9 +803,10 @@ body {
   }
 }
 
-/* --- MOVILES (HASTA 768px / 600px) --- */
+/* --- MÓVILES PEQUEÑOS (HASTA 768px / 600px) --- */
 
 @media screen and (max-width: 768px) {
+  
   .banner-plataformas {
     padding: 20px 16px;
   }
