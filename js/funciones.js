@@ -199,3 +199,122 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  // ==========================================
+  // 1. FILTROS DE CATEGORÍAS EN LA TIENDA
+  // ==========================================
+  var enlacesCategorias = document.querySelectorAll('.cat-item');
+  var tarjetasProductos = document.querySelectorAll('.producto-card');
+
+  if (enlacesCategorias.length > 0 && tarjetasProductos.length > 0) {
+    enlacesCategorias.forEach(function (enlace) {
+      enlace.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        // Cambiar estado activo en el menú lateral
+        enlacesCategorias.forEach(function (item) {
+          item.classList.remove('active');
+        });
+        this.classList.add('active');
+
+        // Obtener la categoría a filtrar
+        var filtro = this.getAttribute('data-filter');
+
+        // Ocultar / Mostrar productos
+        tarjetasProductos.forEach(function (tarjeta) {
+          var categoriaTarjeta = tarjeta.getAttribute('data-categoria');
+
+          if (filtro === 'todas' || categoriaTarjeta === filtro) {
+            tarjeta.style.display = 'flex';
+          } else {
+            tarjeta.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
+
+  // ==========================================
+  // 2. CARRITO DE COMPRAS, TALLA Y TOAST
+  // ==========================================
+  var botonesComprar = document.querySelectorAll('.btn-comprar');
+  var cartCount = document.getElementById('cartCount');
+  var toast = document.getElementById('toastNotification');
+  var totalProductos = 0;
+
+  if (botonesComprar.length > 0) {
+    botonesComprar.forEach(function (boton) {
+      boton.addEventListener('click', function (e) {
+        e.preventDefault();
+        totalProductos++;
+
+        if (cartCount) {
+          cartCount.textContent = '(' + totalProductos + ')';
+        }
+
+        var tarjeta = this.closest('.producto-card');
+        var titulo = tarjeta && tarjeta.querySelector('h3') ? tarjeta.querySelector('h3').textContent : 'Producto';
+        var selectTalla = tarjeta ? tarjeta.querySelector('.select-talla') : null;
+        var talla = selectTalla ? selectTalla.value : 'Única';
+
+        if (toast) {
+          toast.textContent = '¡Añadido: ' + titulo + ' (' + talla + ')!';
+          toast.classList.add('show');
+          setTimeout(function () {
+            toast.classList.remove('show');
+          }, 3000);
+        }
+      });
+    });
+  }
+
+
+
+
+  // ==========================================
+  // 4. BOTÓN VOLVER ARRIBA
+  // ==========================================
+  var btnBackToTop = document.getElementById('backToTop');
+
+  if (btnBackToTop) {
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 300) {
+        btnBackToTop.classList.add('show');
+      } else {
+        btnBackToTop.classList.remove('show');
+      }
+    });
+
+    btnBackToTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+});
+
+// ==========================================
+  // ANIMACIÓN SCROLL REVEAL
+  // ==========================================
+  const elementosReveal = document.querySelectorAll('.reveal');
+
+  if (elementosReveal.length > 0) {
+    const observador = new IntersectionObserver((entradas) => {
+      entradas.forEach(entrada => {
+        if (entrada.isIntersecting) {
+          // Aparece al entrar en pantalla
+          entrada.target.classList.add('active');
+        } else {
+          // Se oculta al salir de pantalla para volver a animarse
+          entrada.target.classList.remove('active');
+        }
+      });
+    }, {
+      threshold: 0.15 // Se activa cuando se ve el 15% del elemento
+    });
+
+    elementosReveal.forEach(el => observador.observe(el));
+  }

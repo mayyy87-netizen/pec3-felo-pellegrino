@@ -23,7 +23,7 @@
   <nav class="nav-links">
     <a href="index.html" class="active">inicio</a>
     <a href="galeria.html">galería</a>
-    <a href="tienda.html">tienda</a>
+    <a href="tienda.html">tienda <span id="cartCount">(0)</span></a>
     <a href="sobre_mi.html">sobre mí</a>
   </nav>
 
@@ -77,7 +77,7 @@
 
  <!-- seccion sobre mi -->
 
-<section id="sobre-mi" class="home-sobre-mi">
+<section id="sobre-mi" class="home-sobre-mi reveal">
   <div class="sobre-mi-container">
     <div class="sobre-mi-content">
       <span class="section-tag">sobre mí</span>
@@ -169,7 +169,7 @@
 </section>
 
 
-<section class="home-doble-seccion">
+<section class="home-doble-seccion reveal">
   <div class="doble-seccion-container">
     
     <div class="bloque-home">
@@ -260,6 +260,9 @@
     </div>
   </div>
 </footer>
+
+<button id="backToTop" class="back-to-top" aria-label="Volver arriba">↑</button>
+<div id="toastNotification" class="toast">¡Producto añadido al carrito!</div>
 
 </body>
 </html>

@@ -153,6 +153,8 @@ body {
   object-fit: contain;
 }
 
+
+
 /* ---  PLATAFORMAS --- */
 .banner-plataformas {
   width: 100%;
@@ -1340,32 +1342,95 @@ body {
     flex-direction: column;
   }
 
-  .tienda-container {
+  .seccion-tienda-main .tienda-container {
     flex-direction: column;
-    gap: 40px;
-  }
-
-  .tienda-categorias {
+    gap: 30px;
     width: 100%;
   }
 
-  .tienda-categorias ul {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 20px;
+  .seccion-tienda-main .tienda-categorias {
+    width: 100%;
   }
 
-  .productos-grid {
+  .seccion-tienda-main .tienda-categorias ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px 20px;
+  }
+
+  .seccion-tienda-main .productos-grid {
     grid-template-columns: repeat(2, 1fr);
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .productos-grid {
+  .seccion-tienda-main {
+    padding: 20px 15px;
+  }
+
+  .seccion-tienda-main .productos-grid {
     grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .seccion-tienda-main .producto-card {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .seccion-tienda-main .prod-img-box img {
+    max-width: 100%;
+    width: auto;
   }
 }
 
+@media screen and (max-width: 600px) {
+  .seccion-tienda-main {
+    padding: 20px 15px;
+  }
+
+  /* 1. Hacer que las categorías se adapten de forma fluida */
+  .tienda-categorias ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 16px;
+  }
+
+  .cat-item {
+    font-size: 0.8rem;
+  }
+
+  /* 2. Forzar a que los contenedores del catálogo ocupen el 100% real */
+  .tienda-catalogo {
+    width: 100%;
+  }
+
+  .productos-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .producto-card {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .prod-img-box {
+    padding: 20px;
+    min-height: 200px;
+  }
+
+  .prod-img-box img {
+    max-width: 100%;
+    height: auto;
+  }
+}
 
 /* Animacion del ecualizador */
 @keyframes ecuMovimiento {
@@ -1427,4 +1492,152 @@ body {
 /* Cursor interactivo para indicar que las fotos son ampliables */
 .foto-card img {
   cursor: pointer;
+}
+
+
+/* --- ANIMACIÓN SCROLL REVEAL --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- BOTÓN VOLVER ARRIBA --- */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  background-color: #CDA676;
+  color: #0d0d0d;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background-color: #EEE8D4;
+  transform: translateY(-3px);
+}
+
+/* --- NOTIFICACIÓN DEL CARRITO (TOAST) --- */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background-color: #CDA676;
+  color: #0d0d0d;
+  padding: 14px 28px;
+  font-weight: bold;
+  border-radius: 4px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  z-index: 2000;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+/* --- ESTILOS DE LA TARJETA DE LA TIENDA Y BOTÓN COMPRAR --- */
+.tienda-container {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.tienda-categorias {
+  width: 200px;
+  flex-shrink: 0;
+}
+
+.tienda-catalogo {
+  flex: 1;
+}
+
+.producto-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #111111;
+  border: 1px solid #222222;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.prod-info-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  text-align: center;
+}
+
+.btn-comprar {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px 14px;
+  background-color: transparent;
+  border: 1px solid #CDA676;
+  color: #CDA676;
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-comprar:hover {
+  background-color: #CDA676;
+  color: #0d0d0d;
+}
+
+/* Selector de Talla */
+.select-talla {
+  margin-top: 6px;
+  width: 100%;
+  background-color: #111111;
+  color: #cccccc;
+  border: 1px solid #333333;
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  cursor: pointer;
+  text-transform: uppercase;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.select-talla:focus,
+.select-talla:hover {
+  border-color: #f2e3c6;
+  color: #ffffff;
 }
